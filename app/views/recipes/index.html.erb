@@ -1,5 +1,7 @@
 <h1>Recipe Index</h1>
 
+<%= link_to "New", new_recipe_path%>
+
 <% @recipes.each do |recipe|%>
     <h1><%= recipe.name %></h1>
     <img src=<%=recipe.image%>>
