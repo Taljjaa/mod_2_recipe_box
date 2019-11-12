@@ -2,6 +2,6 @@
 
 <% @recipes.each do |recipe|%>
     <h1><%= recipe.name %></h1>
-    <p><%= recipe.cook_time%></p>
-    <img src= alt="">
+    <img src=<%=recipe.image%>>
+    <%= link_to 'Details', recipe%>
 <% end %>
