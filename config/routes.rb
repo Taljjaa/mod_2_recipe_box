@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tags
   resources :recipe_tags
   resources :recipes
   resources :users_recipes
