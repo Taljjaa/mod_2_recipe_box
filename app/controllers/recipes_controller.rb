@@ -61,9 +61,6 @@ class RecipesController < ApplicationController
         redirect_to recipe_path(@recipe)
     end
 
-    def destroy
-    end
-
     private 
     def recipe_params(*args)
         params.require(:recipe).permit(*args)
