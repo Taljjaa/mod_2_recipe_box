@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "recipes#index"
+  post '/add_to_recipe_list', to: "users_recipes#add_to_recipe_list"
   resources :tags
   resources :recipe_tags
   resources :recipes
