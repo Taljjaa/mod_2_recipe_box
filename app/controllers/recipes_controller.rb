@@ -43,6 +43,22 @@ class RecipesController < ApplicationController
 
     def update 
         @recipe = Recipe.find(params[:id])
+        @recipe.update(
+            name: params[:recipe][:name], 
+            cook_time: params[:recipe][:cook_time], 
+            image: params[:recipe][:image], 
+            url: params[:recipe][:url]
+        )
+        tags_ids = strip_tags(params[:recipe][:tags])
+        if params[:recipe][:new_tag].length > 0
+            @tag = Tag.create(name: params[:recipe][:new_tag])
+            tags_ids << @tag.id
+        end
+        tags_ids.each do |tag_id|
+            @hmmm = @recipe.recipe_tags.build({tag_id: tag_id, recipe_id: @recipe.id})
+            @hmmm.save
+        end
+        redirect_to recipe_path(@recipe)
     end
 
     def destroy
