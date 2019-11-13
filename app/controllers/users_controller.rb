@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.valid?
             @user.save
+            
             redirect_to '/'
         else 
             flash[:message] = "Username is taken. Please try again."

@@ -13,9 +13,10 @@ class RecipesController < ApplicationController
     end
 
     def create
+        byebug
         tags_ids = strip_tags(params[:recipe][:tags])
         if params[:recipe][:new_tag].length > 0
-            @tag = Tag.create(name: params[:recipe][:new_tag])
+            @tag = Tag.find_or_create_by(name: params[:recipe][:new_tag])
             tags_ids << @tag.id
         end
         @recipe = Recipe.new(
@@ -27,7 +28,7 @@ class RecipesController < ApplicationController
         if @recipe.valid?
             @recipe.save
             tags_ids.each do |tag_id|
-                RecipeTag.create(recipe_id: @recipe.id, tag_id: tag_id)
+                RecipeTag.find_or_create_by(recipe_id: @recipe.id, tag_id: tag_id)
             end
             redirect_to recipe_path(@recipe)
         else
