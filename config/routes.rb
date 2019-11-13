@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: "recipes#index"
+  root to: "recipes#index"
   resources :tags
   resources :recipe_tags
   resources :recipes

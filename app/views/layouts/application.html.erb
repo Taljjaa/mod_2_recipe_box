@@ -12,6 +12,7 @@
   <body>
     <%= link_to "Sign-Up", new_user_path%>
     <%= link_to "Home", recipes_path%>
+    <p>Welcome <%= session[:user_id] %></p>
     <%= yield %>
   </body>
 </html>
