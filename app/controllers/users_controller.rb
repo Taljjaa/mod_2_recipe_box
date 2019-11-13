@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+    def index
+        @users = User.all
+    end
+
     def new 
         @user = User.new
     end
@@ -12,6 +16,10 @@ class UsersController < ApplicationController
             flash[:message] = "Username is taken. Please try again."
             render :new
         end
+    end
+
+    def show 
+        
     end
 
     private 
