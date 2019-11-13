@@ -1,5 +1,5 @@
 <h1><%=link_to @recipe.name, @recipe.url%></h1>
-<%= button_to "Edit", edit_recipe_path%>
+<%= link_to "Edit", edit_recipe_path%>
 <% @recipe.tags.each do |tag|%>
     <%= tag.name%>
 <% end %>

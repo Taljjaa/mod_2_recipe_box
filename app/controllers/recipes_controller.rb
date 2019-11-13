@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
     def create
         tags_ids = strip_tags(params[:recipe][:tags])
-        if params[:new_tag]
+        if params[:recipe][:new_tag]
             @tag = Tag.create(name: params[:recipe][:new_tag])
             tags_ids << @tag.id
         end
@@ -36,9 +36,16 @@ class RecipesController < ApplicationController
     end
 
     def edit
+        @recipe = Recipe.find(params[:id])
+        @recipe_tags = @recipe.tags
+        @tags = Tag.all
     end
 
     def update 
+        @recipe = Recipe.find(params[:id])
+    end
+
+    def destroy
     end
 
     private 
