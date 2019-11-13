@@ -13,11 +13,40 @@ class RecipesController < ApplicationController
     end
 
     def create
+        tags_ids = strip_tags(params[:recipe][:tags])
+        if params[:new_tag]
+            @tag = Tag.create(name: params[:recipe][:new_tag])
+            tags_ids << @tag.id
+        end
+        @recipe = Recipe.new(
+            name: params[:recipe][:name], 
+            cook_time: params[:recipe][:cook_time], 
+            image: params[:recipe][:image], 
+            url: params[:recipe][:url]
+        )
+        if @recipe.valid?
+            @recipe.save
+            tags_ids.each do |tag_id|
+                RecipeTag.create(recipe_id: @recipe.id, tag_id: tag_id)
+            end
+            redirect_to recipe_path(@recipe)
+        else
+            render :new
+        end
     end
 
     def edit
     end
 
     def update 
+    end
+
+    private 
+    def recipe_params(*args)
+        params.require(:recipe).permit(*args)
+    end
+
+    def strip_tags(tags)
+        tags.delete_if {|tag| tag  == "0"}
     end
 end
