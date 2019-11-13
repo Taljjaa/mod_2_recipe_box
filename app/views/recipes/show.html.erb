@@ -1,7 +1,7 @@
 <h1><%=link_to @recipe.name, @recipe.url%></h1>
 <%= link_to "Edit", edit_recipe_path%>
 
-<%= form_tag ('users_recipes')%>
+<%= form_tag ('users_recipes') do%>
     <input type="hidden" name="user_id" value=<%= session[:user_id]%>>
     <input type="hidden" name="recipe_id" value=<%= @recipe.id%>>
     <div><%= submit_tag 'Add Recipe' %></div>
