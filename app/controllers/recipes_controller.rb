@@ -8,8 +8,13 @@ class RecipesController < ApplicationController
     end
 
     def new 
-        @recipe = Recipe.new
-        @tags = Tag.all
+        if session[:user_id]
+            @recipe = Recipe.new
+            @tags = Tag.all
+        else
+            redirect_to login_path
+        end
+        
     end
 
     def create
