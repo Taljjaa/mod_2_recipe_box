@@ -1,6 +1,10 @@
 <div class="recipe_container">
     <h1>Recipe Index</h1>
-    
+    <%= form_with(url: "/search", method: "get") do %>
+        <%= label_tag(:q, "Search:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+    <% end %>
     <% @recipes.each do |recipe|%>
         <h1><%= recipe.name %></h1>
         <img src=<%=recipe.image%>>

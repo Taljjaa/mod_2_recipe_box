@@ -28,25 +28,31 @@ body {
    font-family: 'Tomorrow', sans-serif;
 }
 
-.navbar {
+.home {
    display: flex;
-   justify-content: flex-end;
    background: #00bce1;
    min-width: 100%;
    margin: 0px;
    padding: 0px;
+   justify-content: space-between;
+}
+
+.navbar {
+   display: flex;
+   justify-content: flex-end;
 }
 
 .nav-btn {
-   display: block;
-   min-height: 100%;
    margin: 5px;
+   display: block;
+   height: fit-content;
 }
 
-.nav-btn:hover {
+/* .nav-btn:hover {
    color: white;
    background: black;
-}
+   height: 100%;
+} */
 
 .recipe_container {
    display: flex;
