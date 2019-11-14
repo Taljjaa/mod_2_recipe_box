@@ -1,0 +1,15 @@
+<% if flash[:errors] %>
+    <div><%= flash[:errors] %></div>
+<% end %>
+
+<h1>Login</h1>
+
+<%= form_for :session do |f|%>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password%>
+    <%= f.label :password_confirmation%>
+    <%= f.password_field :password_confirmation%>
+    <%= f.submit "Login In"%>
+<% end %>
