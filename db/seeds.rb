@@ -29,7 +29,7 @@ image = data1.css("img.size-full").first.values[1]
 cook_time = data1.css("span.wprm-recipe-details").children[4].text
 recipe2 = Recipe.create(name: name, cook_time: cook_time, image: image, url: url)
 
-user_me = User.create(username: "Jen")
+# user_me = User.create(username: "Jen")
 
 vegetarian = Tag.create(name: "Vegetarian")
 vegan = Tag.create(name: "Vegan")

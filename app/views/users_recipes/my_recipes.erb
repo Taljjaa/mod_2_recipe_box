@@ -1,10 +1,13 @@
 <h1>My Recipe List</h1>
-
-<% @my_recipes.each do |recipe|%>
-    <h1><%=link_to recipe.name, recipe.url%></h1>
-    <% recipe.tags.each do |tag|%>
-        <%= tag.name%>
-    <% end %>
-    <p>Cook Time: <%=recipe.cook_time%></p>
-    <img src=<%=recipe.image%>>
-<%end%>
+<%if @my_recipes%>
+    <% @my_recipes.each do |recipe|%>
+        <h1><%=link_to recipe.name, recipe.url%></h1>
+        <% recipe.tags.each do |tag|%>
+            <%= tag.name%>
+        <% end %>
+        <p>Cook Time: <%=recipe.cook_time%></p>
+        <img src=<%=recipe.image%>>
+    <%end%>
+<% else %>
+    
+<% end %>
