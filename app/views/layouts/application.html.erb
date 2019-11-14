@@ -16,6 +16,7 @@
       <%= link_to "Login", login_path%>
     <% else %>
       <p>Welcome <%= @current_user.username %></p>
+      <%= link_to "My Recipes", "/my_recipes"%>
       <%= link_to "Logout", "/logout", method: :delete %>
     <% end %>
     <%= yield %>
