@@ -54,7 +54,7 @@ body {
    height: 100%;
 } */
 
-.recipe_container {
+.flexbox_col {
    display: flex;
    flex-direction: column;
    justify-content: center;
