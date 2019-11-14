@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
   post '/add_to_recipe_list', to: "users_recipes#add_to_recipe_list"
   get '/my_recipes', to: "users_recipes#my_recipes", as: 'my_recipes'
-  resources :tags
-  resources :recipe_tags
+  # resources :tags
+  # resources :recipe_tags
   resources :recipes
   resources :users_recipes
   resources :users

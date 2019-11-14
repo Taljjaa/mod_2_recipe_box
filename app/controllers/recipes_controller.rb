@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
         else
             redirect_to login_path
         end
-        
     end
 
     def create
@@ -41,9 +40,13 @@ class RecipesController < ApplicationController
     end
 
     def edit
-        @recipe = Recipe.find(params[:id])
-        @recipe_tags = @recipe.tags
-        @tags = Tag.all
+        if session[:user_id]
+            @recipe = Recipe.find(params[:id])
+            @recipe_tags = @recipe.tags
+            @tags = Tag.all
+        else
+            redirect_to login_path
+        end
     end
 
     def update 
