@@ -1,5 +1,5 @@
 <h1>My Recipe List</h1>
-<%if @my_recipes%>
+<%if @my_recipes.length > 0%>
     <% @my_recipes.each do |recipe|%>
         <h1><%=link_to recipe.name, recipe.url%></h1>
         <% recipe.tags.each do |tag|%>
@@ -11,5 +11,5 @@
         <img src=<%=recipe.image%>>
     <%end%>
 <% else %>
-    
+    <p>No Recipes Found =(</p>    
 <% end %>
