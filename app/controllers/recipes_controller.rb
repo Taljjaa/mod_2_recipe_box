@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
     end
 
     def create
-        byebug
         tags_ids = strip_tags(params[:recipe][:tags])
         if params[:recipe][:new_tag].length > 0
             @tag = Tag.find_or_create_by(name: params[:recipe][:new_tag])
