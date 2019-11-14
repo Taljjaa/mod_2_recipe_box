@@ -10,8 +10,14 @@ class UsersRecipesController < ApplicationController
         if session[:user_id]
             @user = User.find(session[:user_id])
             @my_recipes = @user.recipes
+            
         else
             redirect_to login_path
         end
+    end
+
+    def destroy
+        UsersRecipe.find(params[:id]).delete
+        redirect_to my_recipes_path
     end
 end

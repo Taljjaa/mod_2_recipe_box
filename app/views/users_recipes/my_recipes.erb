@@ -5,7 +5,9 @@
         <% recipe.tags.each do |tag|%>
             <%= tag.name%>
         <% end %>
+        <% hmmm = recipe.users_recipes.find{|users_recipes| users_recipes.user_id == session[:user_id]}%>
         <p>Cook Time: <%=recipe.cook_time%></p>
+        <p><%= link_to "Delete Recipe", "/users_recipes/#{hmmm.id}", method: "delete" %></p>
         <img src=<%=recipe.image%>>
     <%end%>
 <% else %>
