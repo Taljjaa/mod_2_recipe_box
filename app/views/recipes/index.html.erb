@@ -1,11 +1,10 @@
-<h1>Recipe Index</h1>
+<div class="recipe_container">
+    <h1>Recipe Index</h1>
+    
+    <% @recipes.each do |recipe|%>
+        <h1><%= recipe.name %></h1>
+        <img src=<%=recipe.image%>>
+        <%= link_to 'Details', recipe%>
+    <% end %>
+</div>
 
-<% if session[:user_id]%>
-    <%= link_to "New", new_recipe_path%>
-<% end %>
-
-<% @recipes.each do |recipe|%>
-    <h1><%= recipe.name %></h1>
-    <img src=<%=recipe.image%>>
-    <%= link_to 'Details', recipe%>
-<% end %>

@@ -14,6 +14,48 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+
 img {
-   max-width: 55%;
+   max-width: 30%;
+   max-height: 50%;
+   border-radius: 25px;
+}
+
+body {
+   margin: 0px;
+   padding: 0px;
+   font-family: 'Tomorrow', sans-serif;
+}
+
+.navbar {
+   display: flex;
+   justify-content: flex-end;
+   background: #00bce1;
+   min-width: 100%;
+   margin: 0px;
+   padding: 0px;
+}
+
+.nav-btn {
+   display: block;
+   min-height: 100%;
+   margin: 5px;
+}
+
+.nav-btn:hover {
+   color: white;
+   background: black;
+}
+
+.recipe_container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+a {
+   text-decoration: none;
+   color: black;
 }
