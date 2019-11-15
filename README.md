@@ -2,6 +2,9 @@
 
 Recipe Box is a place to store all your online recipes in one place. 
 
+## Project Presentation
+https://docs.google.com/presentation/d/10NJyM4GhZkeo0qA592WqogcdiTc302s4IJR-ky2yHiA/edit?usp=sharing
+
 ## Installation
 
 Run 'bundle install' to install required gems.
