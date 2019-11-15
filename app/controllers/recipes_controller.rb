@@ -63,6 +63,7 @@ class RecipesController < ApplicationController
             image: params[:recipe][:image], 
             url: params[:recipe][:url]
         )
+        @recipe.recipe_tags.delete_all
         tags_ids = strip_tags(params[:recipe][:tags])
         if params[:recipe][:new_tag].length > 0
             @tag = Tag.create(name: params[:recipe][:new_tag])
