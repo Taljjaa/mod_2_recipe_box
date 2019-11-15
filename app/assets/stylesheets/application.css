@@ -86,3 +86,6 @@ a {
    color: lightgoldenrodyellow;
 }
 
+h1 a:hover {
+   color: #00bce1;
+}
