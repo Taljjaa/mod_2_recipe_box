@@ -72,3 +72,17 @@ a {
    text-decoration: none;
    color: black;
 }
+
+.button {
+   border: none;
+   padding: 10px;
+   margin: 10px;
+   background-color: #00bce1;
+   color: black;
+   border-radius: 4px;
+}
+
+.button a:hover {
+   color: lightgoldenrodyellow;
+}
+

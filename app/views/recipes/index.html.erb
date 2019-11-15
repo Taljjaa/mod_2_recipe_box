@@ -5,10 +5,10 @@
         <%= text_field_tag :search %>
         <%= submit_tag("Search") %>
     <% end %>
-    <button><%= link_to "Surprise Me", surprise_me_path%></button>
+    <button class="button"><%= link_to "Surprise Me", surprise_me_path%></button>
     <% @recipes.each do |recipe|%>
         <h1><%= recipe.name %></h1>
-        <%= link_to 'Details', recipe%>
+        <button class="button"><%= link_to 'Details', recipe%></button>
         <img src=<%=recipe.image%>>
     <% end %>
 </div>
