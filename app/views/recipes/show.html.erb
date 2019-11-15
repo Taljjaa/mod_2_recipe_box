@@ -8,7 +8,7 @@
         <%= form_tag ('/add_to_recipe_list') do%>
             <input type="hidden" name="user_id" value=<%= session[:user_id]%>>
             <input type="hidden" name="recipe_id" value=<%= @recipe.id%>>
-            <%= submit_tag 'Add Recipe' %>
+            <button type="submit" class="button">Add Recipe</button>
         <% end %>
     <% end%>
 
