@@ -1,4 +1,10 @@
 <h1>My Recipe List</h1>
+<%= form_tag(my_recipes_path, method: :get) do %>
+    <%= label_tag(:q, "Search:") %>
+    <%= text_field_tag :search %>
+    <%= submit_tag("Search") %>
+<% end %>
+
 <%if @my_recipes.length > 0%>
     <% @my_recipes.each do |recipe|%>
         <h1><%=link_to recipe.name, recipe.url%></h1>
