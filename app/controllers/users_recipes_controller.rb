@@ -11,7 +11,7 @@ class UsersRecipesController < ApplicationController
             if params[:search] != nil
                 @user = User.find(session[:user_id])
                 @my_recipes = @user.recipes.filter do |recipe| 
-                    recipe.name.downcase.include?(params[:search].downcase) 
+                    recipe.name.downcase.include?(params[:search].downcase)
                 end
                 # @my_recipes += @user.recipes.each do |recipe|
                 #     recipe.tags.filter do |tag|

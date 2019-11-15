@@ -1,6 +1,12 @@
 class RecipesController < ApplicationController
     def index
+        if params[:search] != nil
+            @recipes = Recipe.all.filter do |recipe| 
+                recipe.name.downcase.include?(params[:search].downcase)
+            end
+        else 
         @recipes = Recipe.all
+        end
     end
 
     def show
