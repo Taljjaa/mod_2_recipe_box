@@ -13,12 +13,12 @@ class UsersRecipesController < ApplicationController
                 @my_recipes = @user.recipes.filter do |recipe| 
                     recipe.name.downcase.include?(params[:search].downcase)
                 end
-                @my_recipes += @user.recipes.each do |recipe|
-                    recipe.tags.filter do |tag|
-                        tag.name.downcase.include?(params[:search].downcase)
-                    end
-                end
-                @my_recipes.uniq!
+                # @my_recipes += @user.recipes.each do |recipe|
+                #     recipe.tags.filter do |tag|
+                #         tag.name.downcase.include?(params[:search].downcase)
+                #     end
+                # end
+                # @my_recipes.uniq!
             else
                 @user = User.find(session[:user_id])
                 @my_recipes = @user.recipes

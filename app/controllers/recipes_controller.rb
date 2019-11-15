@@ -4,6 +4,12 @@ class RecipesController < ApplicationController
             @recipes = Recipe.all.filter do |recipe| 
                 recipe.name.downcase.include?(params[:search].downcase)
             end
+            # @recipes += Recipe.all.each do |recipe|
+            #     recipe.tags.filter do |tag|
+            #         tag.name.downcase.include?(params[:search].downcase)
+            #     end
+            # end
+            # @recipes.uniq!   
         else 
         @recipes = Recipe.all
         end
