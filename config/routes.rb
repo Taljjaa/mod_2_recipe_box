@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
   post '/add_to_recipe_list', to: "users_recipes#add_to_recipe_list"
   get '/my_recipes', to: "users_recipes#my_recipes", as: 'my_recipes'
+  get '/surprise_me', to: "recipes#surprise_me"
   # resources :tags
   # resources :recipe_tags
   resources :recipes

@@ -5,6 +5,7 @@
         <%= text_field_tag :search %>
         <%= submit_tag("Search") %>
     <% end %>
+    <%= link_to "Surprise Me", surprise_me_path%>
     <% @recipes.each do |recipe|%>
         <h1><%= recipe.name %></h1>
         <img src=<%=recipe.image%>>

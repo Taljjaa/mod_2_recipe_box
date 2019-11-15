@@ -1,20 +1,20 @@
-<div class="flexbox_col2">
+<div class="flexbox_col">
     <h1>New Recipe</h1>
     <%= form_with model: @recipe do |f|%>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.label :cook_time %>
-        <%= f.text_field :cook_time%>
-        <%= f.label :image_url %>
-        <%= f.text_field :image%>
-        <%= f.label :url%>
-        <%= f.text_field :url%>
+        <p><%= f.label :name %></p>
+        <p><%= f.text_field :name %></p>
+        <p><%= f.label :cook_time %></p>
+        <p><%= f.text_field :cook_time%></p>
+        <p><%= f.label :image_url %></p>   
+        <p><%= f.text_field :image%></p>
+        <p><%= f.label :url%></p>
+        <p><%= f.text_field :url%></p>
         <% @tags.each do |tag| %>
             <%= f.check_box :tags, { multiple: true }, tag.id %>
             <%= f.label tag.name%>
         <% end %>
-        <%=f.label :new_tag %>
-        <%= f.text_field :new_tag%>
+        <p><%=f.label :new_tag %></p>
+        <p><%= f.text_field :new_tag%></p>
         <%= f.submit %>
     <% end %>
 </div>

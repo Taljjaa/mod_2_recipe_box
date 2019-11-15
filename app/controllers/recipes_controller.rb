@@ -75,6 +75,12 @@ class RecipesController < ApplicationController
         redirect_to recipe_path(@recipe)
     end
 
+    def surprise_me 
+        @random_id = rand(1..Recipe.all.length)
+        @recipe = Recipe.all[@random_id]
+        render :show
+    end
+
     private 
     def recipe_params
         params.require(:recipe).permit(:name, :cook_time, :image, :url, tags)
