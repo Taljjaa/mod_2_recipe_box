@@ -1,26 +1,33 @@
-# README
+# Recipe Box
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Recipe Box is a place to store all your online recipes in one place. 
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Run 'bundle install' to install required gems.
 
-* System dependencies
+```
+bundle install
+```
 
-* Configuration
+Run 'rails db:create','rails db:migrate' and 'rails db:setup' in the root directory to create the database locally.
 
-* Database creation
+```
+rails db:create && rails db:migrate && rails db:setup
+```
 
-* Database initialization
+Run 'rails s' to start local server
 
-* How to run the test suite
+```
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Go to localhost:3000 in your web browser.
 
-* Deployment instructions
+Browse the recipe index or sign up and create an account to start saving your favorite recipes. 
 
-* ...
-# mod_2_recipe_box
-# mod_2_recipe_box
+## Contributing
+Contributions are welcome. Feel free to open a pull request or branch from this project.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
