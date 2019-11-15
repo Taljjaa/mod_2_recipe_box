@@ -78,7 +78,7 @@ class RecipesController < ApplicationController
     def surprise_me 
         @random_id = rand(1..Recipe.all.length)
         @recipe = Recipe.all[@random_id]
-        render :show
+        redirect_to recipe_path(@recipe)
     end
 
     private 

@@ -4,7 +4,6 @@
         <%= link_to "Edit", edit_recipe_path%>
     <% end %>
 
-
     <% if session[:user_id] != nil%>
         <%= form_tag ('/add_to_recipe_list') do%>
             <input type="hidden" name="user_id" value=<%= session[:user_id]%>>
